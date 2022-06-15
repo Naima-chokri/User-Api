@@ -7,7 +7,7 @@ const Details = ({data}) => {
   const {id} =useParams()
   console.log(id)
   const datafilter = data.filter(el => el.id == id)[0]
-  console.log(datafilter.id)
+  console.log(datafilter)
 
   return (
     <div>
@@ -18,7 +18,7 @@ const Details = ({data}) => {
               <div className="about-text go-to">
                 <h3 className="dark-color">About Me</h3>
                 <h6 className="theme-color lead">A Lead UX &amp; UI designer based in Canada</h6>
-                <p>I <mark>datafilter.compony.name</mark> services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.</p>
+                <p>I <mark>{datafilter.name}</mark> services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.</p>
                 <div className="row about-list">
                   <div className="col-md-6">
                     <div className="media">
@@ -41,11 +41,11 @@ const Details = ({data}) => {
                   <div className="col-md-6">
                     <div className="media">
                       <label>E-mail</label>
-                      <p>info@domain.com</p>
+                      <p>{datafilter.email}</p>
                     </div>
                     <div className="media">
                       <label>Phone</label>
-                      <p>820-885-3321</p>
+                      <p>{datafilter.phone}</p>
                     </div>
                     <div className="media">
                       <label>Skype</label>
